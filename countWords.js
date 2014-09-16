@@ -1,9 +1,19 @@
 var countWords = function(string){
-  var arr = string.split(" ");
-for(var i = 0; i<arr.length; i++){
-  var temp = string.split(arr[i]);
-  console.log(arr[i] + " appears " + (temp.length -1)+ " times.");
-}
+	string = string.toLowerCase();
+  string = string.split("");
+  
+	for(var i = 0; i < string.length; i+=1){
+	    if(string[i] === "," || string[i] === "."){
+	      string.splice(i,1);
+      }else if(string[i] === "!" || string[i] === "?"){
+        string.splice(i,1);
+      }else if(string[i] === ";" || string[i] === ":"){
+        string.splice(i,1);
+      }
+  	}
+  string = string.join("");
+  return string;
 };
 
-countWords("my army is this big");
+
+countWords("This, is the Most; difficult? army to command in my opinion!");
