@@ -4,11 +4,11 @@ var remPunctuation = function(string){
   
   for(var h = 0; h < string.length; h+=1){
       if(string[h] === "," || string[h] === "."){
-        string.splice(h,1);
+        string.splice(h,1, "");
       }else if(string[h] === "!" || string[h] === "?"){
-        string.splice(h,1);
+        string.splice(h,1, "");
       }else if(string[h] === ";" || string[h] === ":"){
-        string.splice(h,1);
+        string.splice(h,1, "");
       }
     }
   string = string.join("");
@@ -41,4 +41,4 @@ var countWords = function(string){
 };
 
 
-countWords("This, is a Most; difficult? ARMY to command in my opinion!");
+countWords("This, is a Most; difficult? ARMY to command in my opinion!!!");
