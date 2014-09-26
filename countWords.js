@@ -18,8 +18,10 @@ var remPunctuation = function(string){
 
 var countWords = function(string){
   var scores = {};
+  var sortWords = [];
   var word;
   var count = 0;
+  var finalCount;
   string = remPunctuation(string);
   string = string.split(" ");
 
@@ -35,10 +37,10 @@ var countWords = function(string){
   }
 
   for(each in scores){
-    console.log(each + " : " + scores[each]);
+    sortWords.push([each, scores[each]]);
   }
-      
+  
 };
 
 
-countWords("This, is a Most; difficult? ARMY to command in my opinion!!!");
+countWords("why must there be a there in there!!!");
