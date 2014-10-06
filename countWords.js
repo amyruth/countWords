@@ -1,3 +1,5 @@
+'use strict';
+
 var remPunctuation = function(string){
   string = string.toLowerCase();
     string = string.split("");
@@ -19,17 +21,16 @@ var remPunctuation = function(string){
 
 var objectToArray = function(obj){
   var sortedObj = [];
-  for(each in obj){
+  for(var each in obj){
     sortedObj.push([each, obj[each]]);
   }
-  sortedObj = sortedObj.sort(function(a,b) {return a[1] - b[1]});
+  sortedObj = sortedObj.sort(function(a,b) {return a[1] - b[1];});
   sortedObj.reverse();
   return sortedObj;
 };
 
 var countWords = function(string){
   var scores = {};
-  var sortWords = [];
   var word;
   var count = 0;
   var finalCount;
