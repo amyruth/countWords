@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="jquery-1.11.1.js"></script>
+    <script src="countWords.js"></script>
+    <title>Word Counter</title>
+  </head>
+  <body>
+    <div class="container">
+    	<h1>Word Counter</h1>
+    	<form role="form" id="sampletext">
+    		<div class="form-group">
+    			<label for="rawtext">Add your text here</label>
+    			<input class="form-control" id="rawtext"></input>
+    		</div>
+    		<button type="submit" class="btn btn-primary">Count Those Words!</button>
+    		<button type="button" class="btn btn-danger">Reset Form</button>
+    	</form>
+    	<div id="results">
+    	<h2>Word Counts</h2>
+    	<div id="counts"></div>
+    	</div>
+    </div>
+  </body>
+</html>

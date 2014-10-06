@@ -49,7 +49,26 @@ var countWords = function(string){
 
  finalCount = objectToArray(scores);
  
- for( var k = 0; k < finalCount.length; k +=1){
-  console.log(finalCount[k][0] + " : " + finalCount[k][1]);
- }
+ return finalCount;
 };
+
+$(document).ready(function(){
+	$('form#sampletext').submit(function(event){
+		var originalText = $('input#rawtext').val();
+		var counted = countWords(originalText);
+		var newArray = [];
+		for(var k = 0; k < counted.length; k+=1){
+			newArray.push('<p>' + counted[k][0] + " : " + counted[k][1] + '</p>');
+		}
+		
+		$('#counts').html(newArray.join(""));
+
+		$('#results').show();
+
+		$('.btn-danger').click(function(){
+			$('#sampletext')[0].reset();
+		});
+		
+		event.preventDefault();
+	});
+});
