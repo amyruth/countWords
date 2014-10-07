@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    <script src="jquery-1.11.1.js"></script>
-    <script src="countWords.js"></script>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
     <title>Word Counter</title>
   </head>
   <body>
@@ -13,15 +11,17 @@
     	<form role="form" id="sampletext">
     		<div class="form-group">
     			<label for="rawtext">Add your text here</label>
-    			<input class="form-control" id="rawtext"></input>
+    			<textarea class="form-control" id="rawtext" name="rawtext" rows="3" cols="25"></textarea>
     		</div>
-    		<button type="submit" class="btn btn-primary">Count Those Words!</button>
-    		<button type="button" class="btn btn-danger">Reset Form</button>
+    		<input type="button" class="btn btn-primary">Count Those Words!</input>
+    		<input type="reset" class="btn btn-danger">Reset Form</input>
     	</form>
     	<div id="results">
-    	<h2>Word Counts</h2>
-    	<div id="counts"></div>
+    	  <h2>Word Counts</h2>
+    	  <div id="counts"></div>
     	</div>
     </div>
+    <script src="jquery-1.11.1.js"></script>
+    <script src="countWords.js"></script>
   </body>
 </html>
