@@ -53,23 +53,16 @@ var countWords = function(string){
  return finalCount;
 };
 
-$(document).ready(function(){
-	$('form#sampletext').submit(function(event){
-		var originalText = $('input#rawtext').val();
-		var counted = countWords(originalText);
-		var newArray = [];
-		for(var k = 0; k < counted.length; k+=1){
+//Changed jQuery code - wasn't sure why you were using a multi-dim array for counted variable.  Did not optimize above code.
+$('#sampletext').submit(function(){
+		var originalText = $('#rawtext').val(),
+		    counted = countWords(originalText),
+	            newArray = [];
+		for(var k = 0, countLength = counted.length; k < countLength; k++){
 			newArray.push('<p>' + counted[k][0] + " : " + counted[k][1] + '</p>');
 		}
 		
 		$('#counts').html(newArray.join(""));
 
-		$('#results').show();
-
-		$('.btn-danger').click(function(){
-			$('#sampletext')[0].reset();
-		});
-		
 		event.preventDefault();
-	});
 });
