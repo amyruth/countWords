@@ -54,7 +54,7 @@ var countWords = function(string){
 };
 
 //Changed jQuery code - wasn't sure why you were using a multi-dim array for counted variable.  Did not optimize above code.
-$('#sampletext').submit(function(){
+$('.btn-primary').click(function(){
 		var originalText = $('#rawtext').val(),
 		    counted = countWords(originalText),
 	            newArray = [];
@@ -64,5 +64,4 @@ $('#sampletext').submit(function(){
 		
 		$('#counts').html(newArray.join(""));
 
-		event.preventDefault();
 });
